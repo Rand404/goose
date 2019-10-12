@@ -8,8 +8,9 @@ client.on('ready', () => {
   console.log(`HONK HONK HONK ${client.user.tag}!`);
 });
 
-client.on('message', msg => {               //Bot will react with a honk emote on any message which includes the word 'honk'
-  if (msg.content.toLowerCase().includes("honk")) {   //Case insensitive
+client.on('message', msg => {
+  if (msg.channel.type == "dm") return;
+  else if (msg.content.toLowerCase().includes("honk")) {
     const emoji = msg.guild.emojis.find(emoji => emoji.name === 'honk');
   msg.react(emoji)
       .then(console.log(colors.blue('Message Honked in:' + msg.channel.name)))
@@ -31,7 +32,8 @@ client.on('message', msg => {     //The bot will react with a dagger emoji to al
 });
 
 client.on('message', msg => {
-  if(msg.content.toLowerCase().includes("h")) {
+  if (msg.channel.type == "dm") return;
+  else if(msg.content.toLowerCase().includes("h")) {
     const number = Math.floor((Math.random() * 100) + 1);
     if (number == 50) {
       msg.channel.send('HONK')
