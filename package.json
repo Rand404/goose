@@ -1,0 +1,27 @@
+{
+  "name": "goose",
+  "version": "1.0.1",
+  "description": "honk",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rand404/goose.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Rand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rand404/goose/issues"
+  },
+  "homepage": "https://github.com/Rand404/goose#readme"
+}
