@@ -13,6 +13,11 @@ client.on('message', msg => {
   msg.react(emoji)
       .then(console.log)
       .catch(console.error);
+} else if (msg.content.toLowerCase().includes("hönk")) {
+    const emoji = msg.guild.emojis.find(emoji => emoji.name === 'honk');
+  msg.react(emoji)
+      .then(console.log)
+      .catch(console.error);
 }
 });
 
