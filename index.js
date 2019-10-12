@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const colors = require('colors')
 const client = new Discord.Client();
 const auth = require('./auth.json');
 const config = require('./config.json');
@@ -28,5 +29,18 @@ client.on('message', msg => {     //The bot will react with a dagger emoji to al
     .catch(console.error);
 } else {}
 });
+
+client.on('message', msg => {
+  if(msg.content.toLowerCase().includes("h")) {
+    const number = Math.floor((Math.random() * 100) + 1);
+    if (number == 50) {
+      msg.channel.send('HONK')
+        .then(message => console.log (colors.green(number + ' HONK deployed')))
+        .catch(console.error);
+  }  else {
+      console.log(colors.red(number + ' Honk not deployed'.red));
+    }
+  }
+})
 
 client.login(auth.token);
