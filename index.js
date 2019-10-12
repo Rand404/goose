@@ -4,7 +4,7 @@ const auth = require('./auth.json');
 const config = require('./config.json');
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`HONK HONK HONK ${client.user.tag}!`);
 });
 
 client.on('message', msg => {               //Bot will react with a honk emote on any message which includes the word 'honk'
