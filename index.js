@@ -12,12 +12,12 @@ client.on('message', msg => {               //Bot will react with a honk emote o
   if (msg.content.toLowerCase().includes("honk")) {   //Case insensitive
     const emoji = msg.guild.emojis.find(emoji => emoji.name === 'honk');
   msg.react(emoji)
-      .then(console.log)
+      .then(console.log(colors.blue('Message Honked in:' + msg.channel.name)))
       .catch(console.error);
 } else if (msg.content.toLowerCase().includes("hönk")) {  //Support for alternative spelling of 'honk'
     const emoji = msg.guild.emojis.find(emoji => emoji.name === 'honk');
   msg.react(emoji)
-      .then(console.log)
+      .then(console.log(colors.blue('Message Honked in:' + msg.channel.name)))
       .catch(console.error);
 }
 });
