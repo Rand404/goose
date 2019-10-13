@@ -28,7 +28,7 @@ client.on('message', msg => {     //The bot will react with a dagger emoji to al
   msg.react("🗡")
     .then(console.log)
     .catch(console.error);
-} else {}
+} else {return;}
 });
 
 client.on('message', msg => {
