@@ -34,7 +34,7 @@ client.on('message', msg => {     //The bot will react with a dagger emoji to al
 client.on('message', msg => {
   if (msg.channel.type == "dm") return;
   else if(msg.content.toLowerCase().includes("h")) {
-    const number = Math.floor((Math.random() * 100) + 1);
+    const number = Math.floor((Math.random() * 200) + 1);
     if (number == 50) {
       msg.channel.send('HONK')
         .then(console.log(colors.green(number + ' HONK deployed in:' + msg.channel.name)))
