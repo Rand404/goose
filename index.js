@@ -37,7 +37,7 @@ client.on('message', msg => {
     const number = Math.floor((Math.random() * 100) + 1);
     if (number == 50) {
       msg.channel.send('HONK')
-        .then(message => console.log (colors.green(number + ' HONK deployed')))
+        .then(console.log(colors.green(number + ' HONK deployed in:' + msg.channel.name)))
         .catch(console.error);
   }  else {
       console.log(colors.red(number + ' Honk not deployed'.red));
