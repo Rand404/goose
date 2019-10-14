@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const colors = require('colors')  //Used for pretty aesthetic colours in console
 const client = new Discord.Client();
 const auth = require('./auth.json');
-const config = require('./config.json');
 
 client.on('ready', () => {
   console.log(`HONK HONK HONK ${client.user.tag}!`);
@@ -24,13 +23,12 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {     //The bot will react with a dagger emoji to all messages sent by users specified in config.json
-  var targeting = Math.floor((Math.random() * 50)+1);
-  if (config.user.includes(msg.author.id)) {
+  var targeting = Math.floor((Math.random() * 500)+1);
     if (targeting == 10) {
   msg.react("🗡")
     .then(console.log(colors.cyan('DAGGER deployed in:' + msg.channel.name)))
     .catch(console.error);
-}} else {
+} else {
     console.log(colors.red(targeting + ' Dagger not deployed'));
 }});
 
