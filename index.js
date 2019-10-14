@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const colors = require('colors')
+const colors = require('colors')  //Used for pretty aesthetic colours in console
 const client = new Discord.Client();
 const auth = require('./auth.json');
 const config = require('./config.json');
@@ -9,8 +9,8 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.channel.type == "dm") return;
-  else if (msg.content.toLowerCase().includes("honk")) {
+  if (msg.channel.type == "dm") return; //Rough fix for a bug in which the bot crashes upon being dm'd with a honk
+  else if (msg.content.toLowerCase().includes("honk")) {  //Reacts to any message containing 'honk' with the emoji tied to :honk:
     const emoji = msg.guild.emojis.find(emoji => emoji.name === 'honk');
   msg.react(emoji)
       .then(console.log(colors.blue('Message Honked in:' + msg.channel.name)))
@@ -31,16 +31,16 @@ client.on('message', msg => {     //The bot will react with a dagger emoji to al
 } else {return;}
 });
 
-client.on('message', msg => {
+client.on('message', msg => {   //On any message containing the letter 'h' the bot generates a number between 1 and 200
   if (msg.channel.type == "dm") return;
   else if(msg.content.toLowerCase().includes("h")) {
     const number = Math.floor((Math.random() * 200) + 1);
-    if (number == 50) {
+    if (number == 50) { //If that message is a 50 it triggers a special honk
       msg.channel.send('HONK')
         .then(console.log(colors.green('HONK deployed:' + msg.channel.name)))
         .catch(console.error);
   }  else {
-      console.log(colors.red(number + ' Honk not deployed'.red));
+      console.log(colors.red(number + ' Honk not deployed'.red)); //On any other number it generates a console log and does nothing
     }
   }
 })
