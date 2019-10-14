@@ -26,7 +26,7 @@ client.on('message', msg => {
 client.on('message', msg => {     //The bot will react with a dagger emoji to all messages sent by users specified in config.json
   if (msg.author.id == config.user) {
   msg.react("🗡")
-    .then(console.log)
+    .then(console.log(colors.cyan('DAGGER deployed in:' + msg.channel.name)))
     .catch(console.error);
 } else {return;}
 });
@@ -34,10 +34,10 @@ client.on('message', msg => {     //The bot will react with a dagger emoji to al
 client.on('message', msg => {
   if (msg.channel.type == "dm") return;
   else if(msg.content.toLowerCase().includes("h")) {
-    const number = Math.floor((Math.random() * 100) + 1);
+    const number = Math.floor((Math.random() * 200) + 1);
     if (number == 50) {
       msg.channel.send('HONK')
-        .then(message => console.log (colors.green(number + ' HONK deployed')))
+        .then(console.log(colors.green('HONK deployed:' + msg.channel.name)))
         .catch(console.error);
   }  else {
       console.log(colors.red(number + ' Honk not deployed'.red));
