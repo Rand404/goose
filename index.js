@@ -24,7 +24,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {     //The bot will react with a dagger emoji to all messages sent by users specified in config.json
-  if (msg.author.id == config.user) {
+  if (config.user.includes(msg.author.id)) {
   msg.react("🗡")
     .then(console.log(colors.cyan('DAGGER deployed in:' + msg.channel.name)))
     .catch(console.error);
