@@ -22,7 +22,7 @@ client.on('message', msg => {
 }
 });
 
-client.on('message', msg => {     //The bot will react with a dagger emoji to all messages sent by users specified in config.json
+client.on('message', msg => {     //The bot will react with a dagger emoji when targeting = 10 on a particular message
   var targeting = Math.floor((Math.random() * 500)+1);
     if (targeting == 10) {
   msg.react("🗡")
