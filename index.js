@@ -23,7 +23,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {     //The bot will react with a dagger emoji when targeting = 10 on a particular message
-  var targeting = Math.floor((Math.random() * 500)+1);
+  var targeting = Math.floor((Math.random() * 2500)+1);
     if (targeting == 10) {
   msg.react("🗡")
     .then(console.log(colors.cyan('DAGGER deployed in:' + msg.channel.name)))
@@ -32,10 +32,10 @@ client.on('message', msg => {     //The bot will react with a dagger emoji when 
     console.log(colors.red(targeting + ' Dagger not deployed'));
 }});
 
-client.on('message', msg => {   //On any message containing the letter 'h' the bot generates a number between 1 and 200
+client.on('message', msg => {   //On any message containing the letter 'h' the bot generates a number between 1 and 1000
   if (msg.channel.type == "dm") return;
   else if(msg.content.toLowerCase().includes("h")) {
-    var number = Math.floor((Math.random() * 200) + 1);
+    var number = Math.floor((Math.random() * 1000) + 1);
     if (number == 50) { //If that message is a 50 it triggers a special honk
       msg.channel.send('HONK')
         .then(console.log(colors.green('HONK deployed:' + msg.channel.name)))
