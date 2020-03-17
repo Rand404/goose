@@ -32,7 +32,7 @@ client.on('message', msg => {     //The bot will react with a dagger emoji when 
     console.log(colors.red(targeting + ' Dagger not deployed'));
 }});
 
-client.on('message', msg => {   //On any message containing the letter 'h' the bot generates a number between 1 and 200
+client.on('message', msg => {   //On any message containing the letter 'h' the bot generates a number between 1 and 1000
   if (msg.channel.type == "dm") return;
   else if(msg.content.toLowerCase().includes("h")) {
     var number = Math.floor((Math.random() * 1000) + 1);
