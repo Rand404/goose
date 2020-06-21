@@ -8,8 +8,9 @@ client.on('ready', () => {
 });
 
 client.on('guildCreate', srv => {
+  console.log(colors.blue(`Joined new server: ${srv}`));
   if (srv.guild.available == false) return;
-  if (srv.guild.emojis.find(emoji => emoji.name === 'honk')) {
+  else if (srv.guild.emojis.find(emoji => emoji.name === 'honk')) {
   console.log(colors.green('Server has honk emote'));
   }
   else {
