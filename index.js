@@ -13,7 +13,7 @@ client.on('guildCreate', srv => {
   console.log(colors.green('Server has honk emote'));
   }
   else {
-    (server.guild.createemoji('/assets/honk_emote.png', 'honk') 
+    (srv.guild.createemoji('/assets/honk_emote.png', 'honk') 
     .then(console.log(colors.green(`Created honk with name ${emoji.name}`))));
     
  }});
