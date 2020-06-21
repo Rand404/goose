@@ -8,7 +8,8 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.channel.type == "dm") return; //Rough fix for a bug in which the bot crashes upon being dm'd with a honk
+  if (msg.guild.available == false) return;
+  else if (msg.channel.type == "dm") return; //Rough fix for a bug in which the bot crashes upon being dm'd with a honk
   else if (msg.content.toLowerCase().includes("honk")) {  //Reacts to any message containing 'honk' with the emoji tied to :honk:
     const emoji = msg.guild.emojis.find(emoji => emoji.name === 'honk');
   msg.react(emoji)
@@ -24,10 +25,11 @@ client.on('message', msg => {
 
 client.on('message', msg => {     //The bot will react with a dagger emoji when targeting = 10 on a particular message
   var targeting = Math.floor((Math.random() * 2500)+1);
-    if (targeting == 10) {
-  msg.react("🗡")
-    .then(console.log(colors.cyan('DAGGER deployed in:' + msg.channel.name)))
-    .catch(console.error);
+  if (msg.guild.available == false) return;
+   else if (targeting == 10) {
+     msg.react("🗡")
+        .then(console.log(colors.cyan('DAGGER deployed in:' + msg.channel.name)))
+        .catch(console.error);
 } else {
     console.log(colors.red(targeting + ' Dagger not deployed'));
 }});
