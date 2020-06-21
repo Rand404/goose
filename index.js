@@ -7,6 +7,17 @@ client.on('ready', () => {
   console.log(`HONK HONK HONK ${client.user.tag}!`);
 });
 
+client.on('guildCreate', srv => {
+  if (srv.guild.available == false) return;
+  if (srv.guild.emojis.find(emoji => emoji.name === 'honk')) {
+  console.log(colors.green('Server has honk emote'));
+  }
+  else {
+    (server.guild.createemoji('/assets/honk_emote.png', 'honk') 
+    .then(console.log(colors.green(`Created honk with name ${emoji.name}`))));
+    
+ }});
+
 client.on('message', msg => {
   if (msg.guild.available == false) return;
   else if (msg.channel.type == "dm") return; //Rough fix for a bug in which the bot crashes upon being dm'd with a honk
