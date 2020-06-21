@@ -1,6 +1,6 @@
 {
   "name": "goose",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "honk",
   "main": "index.js",
   "dependencies": {
