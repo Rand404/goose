@@ -40,8 +40,8 @@ if (msg.guild.available == false) return;
 else if (msg.channel.type == "dm") return;
 else if (msg.content.toLowerCase().includes("h")) {
   var number = Math.floor((Math.random() * 1000) + 1);
-  if (number == 50) { //If that message is a 50 it triggers a special honk
-    msg.channel.send('HONK')
+   if (number == 50) { //If that message is a 50 it triggers a special honk
+     msg.channel.send('HONK')
       .then(console.log(colors.green('HONK deployed:' + msg.channel.name)))
       .catch(console.error);
   }  
