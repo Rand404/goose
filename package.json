@@ -4,8 +4,9 @@
   "description": "honk",
   "main": "index.js",
   "dependencies": {
+    "@discordjs/uws": "^10.149.0",
     "colors": "^1.4.0",
-    "discord.js": "^12.2.0"
+    "discord.js": "11.x"
   },
   "devDependencies": {},
   "scripts": {
