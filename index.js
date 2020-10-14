@@ -10,7 +10,7 @@ client.once('ready', () => {
 client.on('message', message => {
   if (message.channel.type == "dm") return; //Rough fix for a bug in which the bot crashes upon being dm'd with a honk
   else if (message.content.toLowerCase().includes("honk")) {  //Reacts to any message containing 'honk' with the emoji tied to :honk:
-    const emoji = message.guild.emojis.find(emoji => emoji.name === 'honk');
+    const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'honk');
   message.react(emoji)
       .then(console.log(colors.blue('Message Honked in:' + message.channel.name)))
       .catch(console.error);
