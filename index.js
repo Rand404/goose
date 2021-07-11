@@ -20,9 +20,10 @@ client.on('message', message => {
 
 client.on('message', message => {     //The bot will react with a dagger emoji when targeting = 10 on a particular message
   var targeting = Math.floor((Math.random() * 2500)+1);
+  let dagger = ('🗡');
   if (message.channel.type == "dm") return; 
   else if (targeting == 10) {
-  message.react("🗡")
+  message.react(dagger)
     .then(console.log(colors.cyan('DAGGER deployed in:' + message.channel.name)))
     .catch(console.error);
 } else {
