@@ -9,7 +9,7 @@ client.once('ready', () => {
 
 client.on('message', message => {
   const honk = ["honk", "hooonk", "hönk", "hjonk","hjönk", "hoonk"] //Creates a constant where alternative honks can also be specified to account for differences in spelling
-  if (message.channel.type == "dm") return; //Rough fix for a bug in which the bot crashes upon being dm'd with a honk
+  if (message.channel.type == "dm") return; //Stops bot crashing upon being dm'd
   else if (honk.some(word => message.content.toLowerCase().includes(word)) ) {  //Reacts to any message containing 'honk' or a number of set alternatives with the emoji tied to :honk: - Also makes sure to be case insensitive
     const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'honk');
   message.react(emoji)
