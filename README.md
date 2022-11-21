@@ -5,6 +5,4 @@ honk honk honk
 
 It basically just honks at people.
 
-Installation intructions & info coming soon
-
-
+Installation instructions & info coming maybe sometime
