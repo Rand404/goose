@@ -7,18 +7,18 @@ client.once(Events.ClientReady, c => {
   console.log(`HONK HONK HONK ${c.user.tag}!`);
 });
 
-client.on('message', message => {
+client.on('messageCreate', message => {
   const honk = ["honk", "hooonk", "hönk", "hjonk","hjönk", "hoonk"] //Creates a constant where alternative honks can also be specified to account for differences in spelling
   if (message.channel.type == "dm") return; //Stops bot crashing upon being dm'd
   else if (honk.some(word => message.content.toLowerCase().includes(word)) ) {  //Reacts to any message containing 'honk' or a number of set alternatives with the emoji tied to :honk: - Also makes sure to be case insensitive
-    const emoji = message.guild.emojis.cache.find(emoji => emoji.name === 'honk');
-  message.react(emoji)
+    const reactionEmoji = message.guild.emojis.cache.find(emoji => emoji.name === 'honk');
+  message.react(reactionEmoji)
       .then(console.log(colors.blue('Message Honked in:' + message.channel.name)))
       .catch(console.error);
 } 
 });
 
-client.on('message', message => {     //The bot will react with a dagger emoji when targeting = 10 on a particular message
+client.on('message.Create', message => {     //The bot will react with a dagger emoji when targeting = 10 on a particular message
   var targeting = Math.floor((Math.random() * 2500)+1);
   let dagger = ('🗡');
   if (message.channel.type == "dm") return; 
