@@ -1,10 +1,10 @@
-const Discord = require('discord.js');
+const { Client, Events, GatewayIntentBits } = require('discord.js');
 const colors = require('colors')  //Used for pretty aesthetic colours in console
-const client = new Discord.Client();
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.MessageContent] });
 const auth = require('./auth.json');
 
-client.once('ready', () => {
-  console.log(`HONK HONK HONK ${client.user.tag}!`);
+client.once(Events.ClientReady, c => {
+  console.log(`HONK HONK HONK ${c.user.tag}!`);
 });
 
 client.on('messageCreate', message => {
