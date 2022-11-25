@@ -18,7 +18,7 @@ client.on('messageCreate', message => {
 } 
 });
 
-client.on('message.Create', message => {     //The bot will react with a dagger emoji when targeting = 10 on a particular message
+client.on('messageCreate', message => {     //The bot will react with a dagger emoji when targeting = 10 on a particular message
   var targeting = Math.floor((Math.random() * 2500)+1);
   let dagger = ('🗡');
   if (message.channel.type == "dm") return; 
@@ -30,7 +30,7 @@ client.on('message.Create', message => {     //The bot will react with a dagger 
     console.log(colors.red(targeting + ' Dagger not deployed'));
 }});
 
-client.on('message.Create', message => {   //On any message containing the letter 'h' the bot generates a number between 1 and 1000
+client.on('messageCreate', message => {   //On any message containing the letter 'h' the bot generates a number between 1 and 1000
   if (message.channel.type == "dm") return;
   else if(message.content.toLowerCase().includes("h")) {
     var number = Math.floor((Math.random() * 1000) + 1);
