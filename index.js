@@ -22,7 +22,7 @@ client.on('messageCreate', message => {     //The bot will react with a dagger e
   var targeting = Math.floor((Math.random() * 2500)+1);
   if (message.channel.type == "dm") return; 
   else if (targeting == 10) {
-  message.react(dagger)
+  message.react('🗡️')
     .then(console.log(colors.cyan(`DAGGER deployed in: ${message.guild.name} -> ${message.channel.name}`)))
     .catch(console.error);
 } else {
