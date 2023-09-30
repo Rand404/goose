@@ -26,7 +26,7 @@ client.on('messageCreate', message => {     //The bot will react with a dagger e
     .then(console.log(colors.cyan(`DAGGER deployed in: ${message.guild.name} -> ${message.channel.name}`)))
     .catch(console.error);
 } else {
-    console.log(colors.red(targeting + ' Dagger not deployed'));
+    console.log(colors.red(targeting + ' DAGGER not deployed'));
 }});
 
 client.on('messageCreate', message => {   //On any message containing the letter 'h' the bot generates a number between 1 and 1000
@@ -35,10 +35,10 @@ client.on('messageCreate', message => {   //On any message containing the letter
     var number = Math.floor((Math.random() * 1000) + 1);
     if (number == 50) { //If that message is a 50 it triggers a special honk
       message.channel.send('HONK')
-        .then(console.log(colors.green(`HONK deployed: ${message.guild.name} -> ${message.channel.name}`)))
+        .then(console.log(colors.green(`Verbal HONK deployed: ${message.guild.name} -> ${message.channel.name}`)))
         .catch(console.error);
   }  else {
-      console.log(colors.red(number + ' Honk not deployed')); //On any other number it generates a console log and does nothing
+      console.log(colors.red(number + ' Verbal HONK not deployed')); //On any other number it generates a console log and does nothing
     }
   }
 });
