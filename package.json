@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "colors": "^1.4.0",
-    "discord.js": "14.x"
+    "discord.js": "14.8.0"
   },
   "devDependencies": {},
   "scripts": {
